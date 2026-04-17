@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "build": "echo Build OK",
-  "test": "jest"
+    "build": "echo Build OK",
+    "test": "npx jest"
   },
   "keywords": [],
   "author": "",

@@ -2,25 +2,27 @@ name: CI Demo
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches:
+      - develop
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Descargar código
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Instalar Node
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Tests
+      - name: Run tests
+        run: npm test
